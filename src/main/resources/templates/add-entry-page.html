@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<link href="hands-on.css" rel="stylesheet" />
+
+<!-- Gigo third party library to include calendar -->
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+	rel="stylesheet" type="text/css" />
+
+<!-- stylesheet for icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<title>Business Entry Page</title>
+<link rel="stylesheet" th:href="@{/style/style_addEntry.css}">
+</head>
+
+<body>
+	<header>
+		<div class="main">
+			<ul>
+				<li><a th:href="@{portal}">Home</a></li>
+
+			</ul>
+		</div>
+	</header>
+
+<div class="heading" ><h1>Add New Business</h1></div>
+	<div id="form-wrapper" style="max-width: 500px; margin: auto;">
+		<form style="margin: 80px;" th:action="@{portal}" method="POST" th:object="${business}">
+			<div class="form-row">
+
+				<div class="form-group col-md-8" style="color: white">
+					<label for="Fname"><b>Name</b></label> <input type="text"
+						class="form-control" id="name" name="name" th:field="*{name}" required pattern = "[A-Za-z ]+">	
+
+				</div>
+
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-10" style="color: white">
+					<label for="Address1"><b> Address</b></label>
+					 <input
+						type="text" class="form-control" id="address" name="title"
+						th:field="*{address}" required>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-10" style="color: white">
+					<label for="phoneNumber"><b>Contact</b> </label> <input type="number" min = "1000000000" max = "9999999999"
+						class="form-control" id="phoneNumber" name="phoneNumber"
+						th:field="*{phno}" required>
+				</div>
+			</div>
+
+			<div class="form-row">
+
+				<div class="form-group col-md-10" style="margin-top: 6px;">
+					<label for="Category" style="color: white"><b>Choose a
+							Category:</b> </label> 
+					<select class="form-input" name="category"
+						id="category">
+						<option th:each="category : ${categoryList}" th:value="${category}"
+							th:text="${category}"></option>
+					</select>
+					<br>
+					<br>
+					<div class="form-group col-md-3"></div>
+					<div class="submit">
+						<button class="btn btn-primary pull-right btn-md RbtnMargin" style="margin: 8px;"
+							type="submit">Submit</button>
+							
+						<button class="btn btn-primary pull-right btn-md RbtnMargins" style="margin: 6px;"
+							type="reset">Reset</button>
+					</div>
+					
+		</form>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Search for Business</title>
+<link rel="stylesheet" th:href="@{/style/style_customerSearch.css}">
+</head>
+
+<body>
+
+	<header>
+		<div class="main">
+			<ul>
+				<li><a th:href="@{searchPage}">Home</a></li>
+				<li><a th:href="@{aboutUs}">About Us</a></li>
+				<li><a th:href="@{contactUs}">Contact Us</a></li>
+
+			</ul>
+		</div>
+
+
+	</header>
+
+	<div class="search">
+		<form th:action = "@{searchBusiness}" method = "POST">
+		<datalist id="category">
+				<option>electronics</option>
+				<option>electrical</option>
+				<option>cosmetics</option>
+				<option>health clinics</option>
+				<option>rentals cars</option>
+				<option>real estate brokers</option>
+			</datalist>
+			<h2>Business Socials Engine</h2>
+			<input type="text" placeholder="Type and choose category from auto-suggested list.." name="category" id = "category"
+				autocomplete="off" list="category" />
+			<br>
+			<button type="submit" style="color:white;">Search</button>
+
+		</form>
+
+	</div>
+</body>
+</html>

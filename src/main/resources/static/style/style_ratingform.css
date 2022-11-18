@@ -1,0 +1,88 @@
+
+body{
+	
+	background-image:  url('../images/bg.jpg'); /*
+  background-image:  url('../images/customersearch.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Trebuchet MS, sans-serif ;
+  
+}
+
+
+ul{
+  float: right;
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+ul li{
+display: inline-block;
+}
+
+ul li a{
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
+}
+
+ul li a:hover{
+  background-color: #fff;
+  color: black;
+}
+
+
+.search{
+  position: absolute;
+  top: 40%;
+  left: 46%;
+
+  transform: translate(-50%,-50%);
+
+}
+
+
+form{
+ 
+  text-align: center;
+}
+h2{
+  color: white;
+  margin-bottom: 10px;
+  font-size: 40px;
+  align-content: center;
+  left:50%;
+}
+input{
+  margin-bottom: 30px;
+  text-align: left;
+  width: 70%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+
+button{
+  border: none;
+  width: 200px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px 20px;
+  cursor: pointer;
+  background: #0984e3 ;
+}
+input-hover{
+  background-color: ghostwhite;
+}
+botton:hover{
+background-color: springgreen;
+}
+
+
+
+label{
+  color: white;
+  size: 10px;
+}

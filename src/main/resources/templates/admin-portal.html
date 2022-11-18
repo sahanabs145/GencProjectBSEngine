@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="hands-on.css" rel="stylesheet" />
+
+<!-- Gigo third party library to include calendar -->
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+	rel="stylesheet" type="text/css" />
+
+<!-- stylesheet for icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Admin portal</title>
+<link rel="stylesheet" th:href="@{/style/style_adminPortal.css}">
+</head>
+<body>
+	<br>
+	<header>
+		<div class="main">
+			<ul>
+				<li><a th:href="@{/bsengine/admin/portal}">Home</a></li>
+			</ul>
+		</div>
+	</header>
+	<br>
+	<h1>Business Socials Engine</h1>
+	<br>
+	<div class="row">
+
+		<div class="container">
+			<h3 class="text-center" style="color: white;">Business Details</h3>
+			<hr>
+			<div class="container text-left">
+
+				<a class="btn btn-success" th:href="@{/bsengine/admin/entryPage}">Add New
+					Entry</a>
+			</div>
+			<br> <br> <br>
+			<table class="table table-bordered text-black"
+				style="background-color: white;">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Contact</th>
+						<th>Category</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<th:block th:each="business :${businessList}">
+					<tr>
+						<td >[[${business.id}]]</td>
+						<td >[[${business.name}]]</td>
+						<td>[[${business.address}]]</td>
+						<td>[[${business.phno}]]</td>
+						<td>[[${business.category}]]</td>
+						<td><a class="action-link" th:method="Delete"
+							th:href="@{/bsengine/admin/removeBusiness/{id}(id=${business.id})}">Delete</a></td>
+					</tr>
+				</th:block>
+				<tbody>
+</body>
